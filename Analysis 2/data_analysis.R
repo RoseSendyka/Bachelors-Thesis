@@ -114,15 +114,19 @@ descriptives <- data.frame(variables, mean, median, sd)
 
 
 # Correlations n_friends_G, n_friends_US, account age, number of games
+# Normality check
+shapiro.test(df$account_age_months)
+shapiro.test(df$number_of_games)
 
 cor_mat(df[,c(8,9,4,5)], method = "spearman")
 cor_pmat(df[,c(8,9,4,5)], method = "spearman")
 
-# correlation
-cor.test(df$games_per_month, df$number_of_games)
-
 
 # skew
+hist(df$number_of_games)
+skew(df$number_of_games)  # 3.389407
+hist(df$account_age_months)
+skew(df$account_age_months) # 0.7909488
 hist(df$elo_progress_month)
 skew(df$elo_progress_month) # 2.785196
 hist(df$n_friends_G)
