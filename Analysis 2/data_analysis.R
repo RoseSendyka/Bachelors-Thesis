@@ -118,8 +118,8 @@ descriptives <- data.frame(variables, mean, median, sd)
 shapiro.test(df$account_age_months)
 shapiro.test(df$number_of_games)
 
-cor_mat(df[,c(8,9,4,5)], method = "spearman")
-cor_pmat(df[,c(8,9,4,5)], method = "spearman")
+cor_mat(df[,c(8,9,17,5)], method = "spearman")
+cor_pmat(df[,c(8,9,17,5)], method = "spearman")
 
 
 # skew
